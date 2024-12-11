@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateCoffee = () => {
-
+    const navigate = useNavigate();
     const coffee = useLoaderData();
     const { _id, name, chef, taste, photo, supplier, category, details } = coffee;
 
@@ -40,6 +40,7 @@ const UpdateCoffee = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
+                    navigate("/")
                     e.target.reset();
                 }
             })

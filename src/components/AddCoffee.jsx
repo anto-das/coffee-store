@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
+    const navigate = useNavigate();
 
     const handleAddCoffee = e => {
         e.preventDefault();
@@ -35,6 +37,7 @@ const AddCoffee = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
+                    navigate("/")
                     e.target.reset();
                 }
             })
